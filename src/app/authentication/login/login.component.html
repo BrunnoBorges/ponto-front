@@ -1,0 +1,54 @@
+<section class="container-tabs">
+    <mat-tab-group mat-stretch-tabs class="mat-elevation-z4">
+        <mat-tab label="Login">
+            <mat-card >
+                <mat-card-content>
+                    <div fxLayoutAlign="center center">
+                        <h1>Logar</h1>
+                    </div>
+                    <form [formGroup]="formLogin">
+                        <div fxLayoutAlign="center center" fxLayout="column" >
+                            <mat-form-field appearance="outline" [style.width.px]=325>
+                                <mat-label>E-mail</mat-label>
+                                <input type="text" matInput placeholder="E-mail" formControlName="email">
+                                <mat-icon matSuffix>alternate_email</mat-icon>
+                            </mat-form-field>
+                            <div *ngIf="formLogin.controls['email'].invalid && (formLogin.controls['email'].dirty || formLogin.controls['email'].touched)" class="alert">
+                                <div *ngIf="formLogin.get('email').hasError('required')">
+                                    Favor inserir um e-mail
+                                </div>
+                                <div *ngIf="formLogin.get('email').hasError('email')">
+                                        Favor inserir um formato de e-mail válido
+                                </div>
+                            </div>
+                        </div>
+                        <div fxLayoutAlign="center center" fxLayout="column" >
+                            <mat-form-field appearance="outline"  [style.width.px]=325>
+                                <mat-label>Senha</mat-label>
+                                <input type="password" matInput placeholder="Senha" formControlName="password">
+                                <mat-icon matSuffix matTooltip="A senha deve conter ao menos 5 carcteres">password</mat-icon>
+                            </mat-form-field>
+                            <div *ngIf="formLogin.controls['password'].invalid && (formLogin.controls['password'].dirty || formLogin.controls['password'].touched)" class="alert">
+                                <div *ngIf="formLogin.get('password').hasError('required')">
+                                    Favor inserir sua senha
+                                </div>
+                                <div *ngIf="formLogin.get('password').hasError('minlength')">
+                                       Sua senha deve conter no mínimo 5 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button" fxLayoutAlign="center center" >
+                            <button (click)="logar()" mat-raised-button color="primary" [disabled]="formLogin.invalid">Entrar</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Cadastro PF">
+            <app-register-pf></app-register-pf>
+        </mat-tab>
+        <mat-tab label="Cadastro PJ">
+            <app-register-pj></app-register-pj> 
+        </mat-tab>
+    </mat-tab-group>
+</section>

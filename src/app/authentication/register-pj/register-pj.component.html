@@ -1,0 +1,47 @@
+<mat-card>
+    <mat-card-content>
+            <div fxLayoutAlign="center center">
+                <h1>Cadastrar Empresa</h1>
+            </div>
+        <form [formGroup]="formPJ" (ngSubmit)="submitPj()">
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" [style.width.px]=325>
+                    <mat-label>Razão Social</mat-label>
+                    <input type="text" matInput placeholder="Razão Social" formControlName="namePj">
+                    <mat-icon matSuffix>work</mat-icon>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" [style.width.px]=325>
+                    <mat-label>CNPJ</mat-label>
+                    <input type="text" matInput placeholder="CNPJ" formControlName="cnpj" mask="00.000.000/0000-00">
+                    <mat-icon matSuffix>home_work</mat-icon>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" [style.width.px]=325>
+                    <mat-label>E-mail</mat-label>
+                    <input type="text" matInput placeholder="E-mail" formControlName="emailPj">
+                    <mat-icon matSuffix>alternate_email</mat-icon>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" [style.width.px]=325>
+                    <mat-label>Senha</mat-label>
+                    <input type="password" matInput placeholder="Senha" formControlName="passwordPj">
+                    <mat-icon matSuffix>password</mat-icon>
+                </mat-form-field>
+            </div>
+            <div fxLayoutAlign="center center">
+                <mat-form-field appearance="outline" [style.width.px]=325>
+                    <mat-label>Confirmar Senha</mat-label>
+                    <input type="password" matInput placeholder="Confirmar Senha" formControlName="passwordConfirmPj">
+                    <mat-icon matSuffix>password</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="button" fxLayoutAlign="center center">
+                <button type="submitPj" mat-raised-button color="warn">Cadastrar</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

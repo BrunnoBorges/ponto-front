@@ -1,0 +1,58 @@
+<section>
+    <h1>Controle de ponto</h1>
+    <div class="container-tabs">
+        <mat-table [dataSource]="register" class="mat-elevation-z8">
+                <!-- Position Column -->
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+            </ng-container>
+            
+            <!-- Name Column -->
+            <ng-container matColumnDef="locale">
+                <mat-header-cell *matHeaderCellDef> Localização </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.locale}} </mat-cell>
+            </ng-container>
+                        
+            <mat-header-row *matHeaderRowDef="displayedRegister"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedRegister;"></mat-row>
+        </mat-table>
+        <div class="button" fxLayoutAlign="center center" [style.padding.px]=25>
+            <button (click)="back()" mat-stroked-button color="primary" [style.margin.px]=10><mat-icon>arrow_back</mat-icon> VOLTAR</button>
+            <button (click)="registrar()" mat-raised-button color="primary" [style.margin.px]=10>REGISTRAR PONTO</button>
+        </div>
+    </div>
+
+    <!-- <div class="container-list">
+         <mat-table [dataSource]="registered" class="mat-elevation-z8">
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Data </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.date}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="type">
+                <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.type}} </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="locale">
+                <mat-header-cell *matHeaderCellDef> Localização </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.locale}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="edit">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let element">  <mat-icon>edit</mat-icon> </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                <mat-cell *matCellDef="let element">  <mat-icon>delete_outline</mat-icon> </mat-cell>
+            </ng-container>
+                        
+            <mat-header-row *matHeaderRowDef="displayedRegistered"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedRegistered;"></mat-row>
+        </mat-table>
+    </div> -->
+    
+</section>
